@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+ http:
+   image: mike0802/docker_ass_hello_world:latest
+   volumes:
+   - db_data:/usr/local/apache2/htdocs/
+   restart: always
+volumes:
+ db_data: {} 

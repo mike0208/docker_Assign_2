@@ -1,0 +1,9 @@
+docker swarm init 
+
+To add a worker to this swarm, run the following command:
+docker swarm join --token SWMTKN-1-170vx37jh0vuxuko9ceu8xfoq6ebhx1hw7jhy4w7qq2i8k9fin-bncgoom0krf9logq2jw3gsu6m 192.168.65.3:2377
+
+docker network create –d overlay mike-overlay 
+docker service create --name website --replicas 5 --network mike-overlay --publish 80:80 mike0802/docker_ass_hello_world:latest
+docker service scale website=2 
+
